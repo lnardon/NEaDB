@@ -21,15 +21,15 @@ const db = neadb();
 ## Avaiable functions
 
 ```js
-db.create(); // Function to create
+db.create(); // Creates database file
 
 db.createKey(key); // Creates json key to store values
 
 db.deleteKey(key); // Deletes json key with it's value
 
-db.storeValue(key, value); // Store value in a given key
+db.storeValue(key, value); // Stores value in a given key
 
-db.deleteValue(key); // Delete value in a given key
+db.deleteValue(key); // Deletes value in a given key
 
 db.getValue(key); // Retrieves value from given key
 
