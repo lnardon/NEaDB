@@ -13,9 +13,9 @@ class neadb {
   createKey(key: string) {
     fs.readFile("./neadb.json", "utf-8", (err, data: string) => {
       if (err) throw err;
-      let oldData = JSON.parse(data);
-      oldData[key] = {};
-      fs.writeFile("./neadb.json", JSON.stringify(oldData), (err) => {
+      let dbData = JSON.parse(data);
+      dbData[key] = {};
+      fs.writeFile("./neadb.json", JSON.stringify(dbData), (err) => {
         if (err) throw err;
       });
     });
@@ -25,9 +25,9 @@ class neadb {
   storeValue(key: string, value: any) {
     fs.readFile("./neadb.json", "utf-8", (err, data: string) => {
       if (err) throw err;
-      let oldData = JSON.parse(data);
-      oldData[key] = value;
-      fs.writeFile("./neadb.json", JSON.stringify(oldData), (err) => {
+      let dbData = JSON.parse(data);
+      dbData[key] = value;
+      fs.writeFile("./neadb.json", JSON.stringify(dbData), (err) => {
         if (err) throw err;
       });
     });
@@ -43,6 +43,21 @@ class neadb {
       } else {
         console.log("Key not found");
       }
+    });
+  }
+  // Deletes given key from database
+  deleteKey(key: string) {
+    fs.readFile("./neadb.json", "utf-8", (err, data: string) => {
+      if (err) throw err;
+      let dbData = JSON.parse(data);
+      if (dbData[key]) {
+        delete dbData[key];
+      } else {
+        console.log("Key not found");
+      }
+      fs.writeFile("./neadb.json", JSON.stringify(dbData), (err) => {
+        if (err) throw err;
+      });
     });
   }
 }
