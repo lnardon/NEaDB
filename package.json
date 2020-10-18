@@ -1,6 +1,6 @@
 {
   "name": "neadb",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "NEaDB is a npm package to simulate a small and easy to use database using node and json",
   "main": "lib/index.js",
   "types": "lib",
