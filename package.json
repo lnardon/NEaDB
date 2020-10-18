@@ -1,9 +1,12 @@
 {
   "name": "neadb",
   "version": "1.0.0",
-  "description": "NEaDB is a npm package to simulate a small and easy to use database",
-  "main": "index.js",
+  "description": "NEaDB is a npm package to simulate a small and easy to use database using node and json",
+  "main": "lib/index.js",
+  "types": "lib",
   "scripts": {
+    "dev": "nodemon src/index.ts",
+    "build": "tsc -p .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +23,13 @@
     "json"
   ],
   "author": "github.com/lnardon",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.5",
+    "sucrase": "^3.16.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "@types/node": "^14.11.10"
+  }
 }
