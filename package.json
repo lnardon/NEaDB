@@ -1,0 +1,24 @@
+{
+  "name": "neadb",
+  "version": "1.0.0",
+  "description": "NEaDB is a npm package to simulate a small and easy to use database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/lnardon/NEaDB"
+  },
+  "keywords": [
+    "NEaDB",
+    "NRD",
+    "node",
+    "databse",
+    "simple",
+    "javascript",
+    "json"
+  ],
+  "author": "github.com/lnardon",
+  "license": "MIT"
+}
