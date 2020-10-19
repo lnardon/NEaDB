@@ -42,6 +42,19 @@ class neadb {
     });
   }
 
+  // Retrieves available keys from database
+  getKeys() {
+    fs.readFile("./neadb.json", "utf-8", (err, data: string) => {
+      if (err) throw err;
+      let dbData = JSON.parse(data);
+      if (dbData) {
+        return Object.keys(dbData);
+      } else {
+        console.log("No keys found");
+      }
+    });
+  }
+
   // Adds data to given key
   storeValue(key: string, value: any) {
     fs.readFile("./neadb.json", "utf-8", (err, data: string) => {
